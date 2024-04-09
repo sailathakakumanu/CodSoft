@@ -39,9 +39,9 @@ class StudentManagementSystem {
 			stmt.executeUpdate("CREATE TABLE IF NOT EXISTS students (name VARCHAR(255) NOT NULL, roll_number VARCHAR(255) PRIMARY KEY, grade VARCHAR(255) NOT NULL);");
 		}
 		catch (ClassNotFoundException e) {
-            System.out.println("Error: MySQL JDBC driver not found.");
-            e.printStackTrace();
-        } 
+	            System.out.println("Error: MySQL JDBC driver not found.");
+	            e.printStackTrace();
+		} 
 		catch(Exception e)
 		{
 			System.out.println("Error: "+e.getMessage());
@@ -54,9 +54,9 @@ class StudentManagementSystem {
 		{
 			if (student.getName() == null ||student.getName().isEmpty() || student.getRollNumber() == null || student.getRollNumber().isEmpty())
 			{
-	            System.out.println("Error: Name or roll number cannot be null.");
-	            return;
-	        }
+	            	System.out.println("Error: Name or roll number cannot be null.");
+	            	return;
+			}
 			preparedStatement = con.prepareStatement("INSERT INTO students (name, roll_number, grade) VALUES (?, ?, ?)");
 			preparedStatement.setString(1, student.getName());
 			preparedStatement.setString(2, student.getRollNumber());
@@ -66,12 +66,12 @@ class StudentManagementSystem {
 		} 
 		catch (SQLException e) 
 		{
-	        if (e.getSQLState().equals("23000")) {
-	            System.out.println("Error adding student: Roll number already exists.");
-	        } 
-	        else 
-	            System.out.println("Error adding student: " + e.getMessage());
-	    }
+		        if (e.getSQLState().equals("23000")) {
+		            System.out.println("Error adding student: Roll number already exists.");
+		        } 
+		        else 
+		            System.out.println("Error adding student: " + e.getMessage());
+	    	}
 		catch(Exception e)
 		{
 			System.out.println("Error: "+e.getMessage());
