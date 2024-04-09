@@ -8,9 +8,9 @@ public class NumberGame {
         int score = 0;
         System.out.println(name+", Welcome to the Number Guessing Game! \nHere's how the points are awarded for each attempt:\n1st Attempt: 100 points\n2nd Attempt: 80 points\n3rd Attempt: 60 points\n4th Attempt: 40 points\n5th Attempt: 20 points\n\nGood luck and enjoy the game!");
         boolean playAgain = true;
-        boolean guess= false;
         while (playAgain)
         {
+            boolean guess= false;
             int generatedNumber = random.nextInt(100) +1;
             System.out.println("You have 5 tries to guess the number correctly.");
             for (int i = 5,attempts=1; i >= 1 ; i--,attempts++) {
