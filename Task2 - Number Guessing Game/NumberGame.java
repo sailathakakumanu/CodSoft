@@ -1,7 +1,5 @@
 import java.util.*;
-
 public class NumberGame {
-
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
@@ -11,14 +9,13 @@ public class NumberGame {
         System.out.println(name+", Welcome to the Number Guessing Game! \nHere's how the points are awarded for each attempt:\n1st Attempt: 100 points\n2nd Attempt: 80 points\n3rd Attempt: 60 points\n4th Attempt: 40 points\n5th Attempt: 20 points\n\nGood luck and enjoy the game!");
         boolean playAgain = true;
         boolean guess= false;
-        
         while (playAgain)
         {
             int generatedNumber = random.nextInt(100) +1;
             System.out.println("You have 5 tries to guess the number correctly.");
             for (int i = 5,attempts=1; i >= 1 ; i--,attempts++) {
                 System.out.println("Attempt : "+(attempts));
-                System.out.println("the number was: "+generatedNumber);
+                // System.out.println("the number was: "+generatedNumber);
                 System.out.print("Guess a number between 1 and 100: ");
                 int guessedNumber;
                 while (true) {
@@ -41,9 +38,11 @@ public class NumberGame {
                     score+=i*20;
                     guess = true;
                     break;
-                } else if (guessedNumber < generatedNumber) {
+                } 
+                else if (guessedNumber < generatedNumber) {
                     System.out.println("Your guess is lower than the generated number. Try again!");
-                } else {
+                } 
+                else {
                     System.out.println("Your guess is higher than the generated number. Try again!");
                 }
             }
@@ -66,8 +65,6 @@ public class NumberGame {
 
         }
         System.out.println("Thank you, " + name + ", for playing! Your final score is: " + score);
-
-      
         scanner.close();
     }
 
