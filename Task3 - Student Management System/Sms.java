@@ -34,7 +34,7 @@ class StudentManagementSystem {
 	public StudentManagementSystem() {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");  
-			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/studentdb", "root", "Omkar@2007");
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/studentdb", "root", "password");
 			stmt = con.createStatement();
 			stmt.executeUpdate("CREATE TABLE IF NOT EXISTS students (name VARCHAR(255) NOT NULL, roll_number VARCHAR(255) PRIMARY KEY, grade VARCHAR(255) NOT NULL);");
 		}
